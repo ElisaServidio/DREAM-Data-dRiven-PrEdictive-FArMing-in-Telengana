@@ -1,0 +1,208 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage[english]{babel} 
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{tocbibind} 
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.1mm}}
+
+\center 
+
+\includegraphics[width=50mm,scale=0.5]{Logo_Politecnico_Milano.png}\\[0.5cm] 
+
+{\Large Computer Science and Engineering}\\[0.4cm] 
+{\large Software Engineering 2}\\[0.4cm] 
+{\large Academic year 2021-2022}\\[0.5cm] 
+
+\HRule \\[1.5 cm]
+{\LARGE Requirements Analysis and Specification Document} \\[1cm]
+{\textbf {\Huge DREAM}}\\[0.3cm] 
+{\LARGE Data-dRiven PrEdictive FArMing in Telengana} \\[1cm]
+\HRule \\[1.5cm]
+\raggedright
+
+\begin{minipage}{0.55\textwidth}
+\begin{flushleft} \large
+\emph{Authors:}\\
+Elisa \textsc{Servidio}\hfill 996387 \\
+Federica \textsc{Suriano}\hfill 953085 \\
+Arslan \textsc{Ali}\hfill 971503 \\
+\end{flushleft}
+\end{minipage}\\[1 cm]
+~
+
+\center
+
+{\large - -, 2021}\\[0.3 cm]
+{\large Version -.0}\\
+
+\vfill 
+\end{titlepage}
+
+\newpage
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\tableofcontents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+\listoftables
+\newpage
+\listoffigures
+\newpage
+
+\chapter{Introduction}
+The Requirement Analysis and Specification Document (RASD) has the purpose of describing, to a wide range of potential readers, the system to be developed for the problem under consideration.\\ 
+It contains the description of the scenarios, the corresponding use cases and the models describing requirements and specifications.\\
+It focuses also on interactions between the system and the users, including the implied  constraints and functionalities that are going to be implemented.
+
+\section{Purpose}
+Telangana is the 11th largest and the twelfth-most populated state in India with a geographical area of 112,077 km2 and 35,193,978 residents (data from 2011).\\
+
+The economy of Telangana is mainly driven by agriculture, a sector which plays a pivotal role in all India’s economy: over 58\% of rural households depend on it as the principal means of livelihood, 80\% of whom are smallholder farmers with less than 2 hectares of farmland. More than a fifth of the smallholder farm households are below poverty.\\
+
+Worldwide there are many threats to the agriculture sector.\\
+World population is estimated to reach 9.7 billion by 2050 (as per a recent UN estimate), therefore food demand is expected to increase anywhere between 59\% to 98\% by 2050 (source Harvard Business Review).\\
+Climate change is predicted to result in a 4\%-26\% loss in net farm income towards the end of the century.\\
+The COVID-19 pandemic has greatly exposed the vulnerabilities of marginalized communities, small holder farmers and the importance of building resilient food systems.\\
+
+This calls for a revamp of the entire food supply chain to help bolster countries against shocks and challenges developing and adopting innovative methodologies and technologies.\\
+For this reason, Telangana’s government aims to design, develop and demonstrate anticipatory governance models for food systems using digital public goods and community-centric approaches to strengthen data-driven policy making in the state.\\
+This will require the involvement of multiple stakeholders, from normal citizens to policy makers, farmers, market analysts, agronomists, etc.\\
+
+To achieve this goal, Telangana wants to partner with IT providers with the aim of acquiring and combining data concerning: meteorological forecasts, agriculture production (types of products, produced amount per product, amount of water used by each farmer), humidity of soil and information obtained by the governmental agronomists who periodically visit the farms in the geographic area which they are assigned to.\\
+Acquiring and combining such data, the software system DREAMS supports the work of three types of actors: policy makers, farmers, and agronomists.\\
+
+DREAMS allows Telangana’s policy makers to  identify farmers who are performing well and those who are performing particularly badly. The first ones, especially the more resilient to meteorological adverse events, will receive special incentives and will be asked to provide useful best practices to the others. Moreover, the system will help policy makers to understand whether the steering initiatives carried out by agronomists with the help of good farmers produce significant results.\\
+
+On the other hand, farmers are allowed to visualize data relevant to them based on their location and type of production, such as weather forecasts and personalized suggestions (i.e. specific crops to plant or specific fertilizers to use). They can insert in the system data about their production and any problem they face for which they can request for help and suggestions by agronomists and other farmers with whom they can also create discussion forums.\\
+
+Eventually, agronomists, who are in charge of a certain area, can receive information about requests for help and answer them and they can visualize data concerning weather forecasts and the best performing farmers in the area. Furthermore, agronomists can visualize, update and confirm a daily plan to visit farms in the area, assuming that all farms must be visited at least twice a year, but those that are under-performing should be visited more often, depending on the type of problem they are facing.
+
+\subsection{Goals of the Application}
+\begin{itemize}
+    \item \textit {G.1}: Allows policy makers to identify those farmers who are performing well
+    \item \textit {G.2}: Allows policy makers to identify those farmers who are performing badly
+    \item \textit {G.3}: Allows policy makers to verify the improvement of farmers who have been already helped by agronomist or good farmers
+    \item \textit {G.4}: Allows farmers to visualize data relevant to them based on their location and type of production
+    \item \textit {G.5}: {\color{red}  Allows farmers to insert in the system data about their production and any problem they face}
+    \item \textit {G.6}: Allows farmers to request for help and suggestions by agronomists and other farmers
+    \item \textit {G.7}: Allows farmers to create discussion forums with the other farmers
+    \item \textit {G.8}: {\color{red}  Allows agronomists to insert the area they are responsible of}
+    \item \textit {G.9}: {\color{red}  Allows agronomists to receive information about requests for help}
+    \item \textit {G.10}: Allows agronomists to answer to requests for help from farmers
+    \item \textit {G.11}: Allows agronomists to visualize data concerning weather forecasts in the area
+    \item \textit {G.12}: Allows agronomists to visualize data concerning the best performing farmers in the area
+    \item \textit {G.13}: Allows agronomists to visualize a daily plan to visit farms in the area
+    \item \textit {G.14}: Allows agronomists to update a daily plan to visit farms in the area
+    \item \textit {G.15}: Allows agronomists to confirm the execution of the daily plan at the end of each day 
+    \item \textit {G.16}: Allows agronomists to specify the deviations from the daily plan at the end of the day
+
+\end{itemize}
+
+\section{Scope}
+The aim of the DREAM software product is to develop and adopt anticipatory governance models for food systems to strengthen data-driven state policy. \\
+It takes care of the acquisition and management of all data collected in order to support the work of farmers, agronomists and policy makers.\\
+The system aims to collect data not only from sensors located throughout the territory, but also from farmers. The analysis of the acquired data aims to improve the production of farmers.\\ Low-performing farmers are identified by policy makers and supported / helped by the best-performing ones.\\
+Everything is supervised by agronomists who take care of their own geographical areas of competence.\\
+
+To better understand all the phenomena involved, we distinguish them into two types according to the World and Machine paradigm [M. Jackson and P. Zane]. The World is the environment surrounding the system, while the Machine is the system itself.
+
+\subsection{World and Shared phenomena}
+
+\section{Definitions, Acronyms, Abbreviations}
+\subsection{Definitions}
+\subsection{Acronyms}
+\subsection{Abbreviations}
+
+\section{Revision History}
+
+\section{Reference Documents}
+
+\section{Document Structure}
+
+
+\chapter{Overall Description}
+
+\section{Product Perspective}
+\subsection{Scenarios}
+\subsection{Class Diagrams}
+\subsection{State Charts}
+
+\section{Product functions}
+
+\section{Users Characteristics}
+
+\section{Assumptions, dependencies and constraints}
+\subsection{Domain Assumptions}
+\subsection{Dependencies}
+
+
+\chapter{Specific Requirements}
+
+\section{External Interface Requirements}
+\subsection{User Interfaces}
+\subsection{Hardware Interfaces}
+\subsection{Software Interfaces}
+\subsection{Communication Interfaces}
+
+\section{Functional Requirements}
+\subsection{Use Case Diagrams}
+\subsection{Use Case Analysis}
+\subsection{Sequence Diagrams}
+\subsection{Requirements}
+\subsection{Traceability Matrix}
+
+\section{Performance Requirements}
+
+\section{Design Constraints}
+\subsection{Standards compliance}
+\subsection{Hardware limitations}
+\subsection{Any other constraint}
+
+\section{Software System Attributes}
+\subsection{Reliability}
+\subsection{Availability}
+\subsection{Security}
+\subsection{Maintainability}
+\subsection{Portability}
+
+
+\chapter{Formal Analysis using Alloy}
+
+\section{Alloy Model}
+\subsection{Signatures}
+\subsection{Facts}
+\subsection{Assertions}
+\subsection{Analysis Results}
+
+
+\chapter{Effort Spent}
+
+
+\begin{thebibliography}{9}
+\bibitem{di Nitto:Lectures}
+Elisabetta Di Nitto (2021),
+\emph{Software Engineering 2 - Lectures}.
+
+\bibitem{Jackson:Phenomena}
+Michael A. Jackson (1995),
+\emph{The World and the Machine},
+\url{http://mcs.open.ac.uk/mj665/icse17kn.pdf}.
+
+\bibitem{ETH:Requirements}
+ETH Zürich (2009),
+\emph{Requirements Specification},
+\url{se.inf.ethz.ch/courses/2011a_spring/soft_arch/exercises/02/Requirements_Specification.pdf}.
+
+\end{thebibliography}
+
+\end{document}
