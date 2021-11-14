@@ -1,16 +1,34 @@
 \subsection{World and Shared phenomena}
-
-\rowcolors{2}{white!90!blue!50}{white}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|  }
+\rowcolors{2}{white}{white!90!blue!50}
+\renewcommand{\arraystretch}{2}
+\begin{longtable}{ |m{3.65cm}|m{3.25cm}|m{2.3cm}|}
+\caption{World and Shared phenomena\label{long}}\\
 \hline
+\endfirsthead
+\endhead
+\hline
+\endlastfoot
 \rowcolor{white!40!blue!70}
-Phenomenon & Who controls it? & Is it shared?\\
+\textbf{Phenomenon} & \textbf{Who controls it?} & \textbf{Is it shared?}\\
 \hline
-1st phenomena & W & Y \\
-2nd phenomena & W & Y \\
-2nd phenomena & W & Y \\
-2nd phenomena & W & Y \\
-2nd phenomena & W & Y \\
-2nd phenomena & W & Y \\
+A policy maker checks the productivity of a farmer on the app & \centering W & \hfil Y\\
+A farmer visualize relevant data on the app & \centering W & Y\\
+Retrieve relevant data of a farmer & \centering M & N\\
+A farmer insert in the system the production of the day & \centering W & Y\\
 \hline
-\end{tabular}
+A farmer makes a request for help to an agronomist & \centering W & Y\\
+A farmer makes a request for help to other farmers & \centering W & Y\\
+A farmer asks a question on the forum & \centering W & Y\\
+The system associates with each agronomist all the farmers who take care of the land in the area under his responsibility & \centering M & N\\
+An agronomist insert on the system the area he is responsible of & \centering W & Y\\
+An agronomist receives the requests for help farmers have sent him & \centering M & N\\
+An agronomist replies to requests for help sent to him by the farmers & \centering W & Y\\
+An agronomist visualize all data about the farmers of the area he is responsible of & \centering W & Y\\
+An agronomist visit a farm & \centering W & N\\
+\hline
+An agronomist visualize his daily plan & \centering W & Y\\
+An agronomist update his daily plan & \centering W & Y\\
+An agronomist carries out his daily plan & \centering W & N\\
+An agronomist confirms his daily plan execution & \centering W & Y\\
+
+\end{longtable}
