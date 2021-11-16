@@ -1,7 +1,7 @@
 \subsection{World and Shared phenomena}
 \rowcolors{2}{white}{white!90!blue!50}
 \renewcommand{\arraystretch}{2}
-\begin{longtable}{ |m{3.65cm}|m{3.25cm}|m{2.3cm}|}
+\begin{longtable}{ |m{4.7cm}|C{2.5cm}|C{1.5cm}|}
 \caption{World and Shared phenomena\label{long}}\\
 \hline
 \endfirsthead
@@ -11,24 +11,40 @@
 \rowcolor{white!40!blue!70}
 \textbf{Phenomenon} & \textbf{Who controls it?} & \textbf{Is it shared?}\\
 \hline
-A policy maker checks the productivity of a farmer on the app & \centering W & \hfil Y\\
-A farmer visualize relevant data on the app & \centering W & Y\\
-Retrieve relevant data of a farmer & \centering M & N\\
-A farmer insert in the system the production of the day & \centering W & Y\\
-\hline
-A farmer makes a request for help to an agronomist & \centering W & Y\\
-A farmer makes a request for help to other farmers & \centering W & Y\\
-A farmer asks a question on the forum & \centering W & Y\\
-The system associates with each agronomist all the farmers who take care of the land in the area under his responsibility & \centering M & N\\
-An agronomist insert on the system the area he is responsible of & \centering W & Y\\
-An agronomist receives the requests for help farmers have sent him & \centering M & N\\
-An agronomist replies to requests for help sent to him by the farmers & \centering W & Y\\
-An agronomist visualize all data about the farmers of the area he is responsible of & \centering W & Y\\
-An agronomist visit a farm & \centering W & N\\
-\hline
-An agronomist visualize his daily plan & \centering W & Y\\
-An agronomist update his daily plan & \centering W & Y\\
-An agronomist carries out his daily plan & \centering W & N\\
-An agronomist confirms his daily plan execution & \centering W & Y\\
+
+A farmer signs up to the Application or logs in if already registered & W & Y\\
+An agronomist registers into the Application or logs in if already 
+registered & W & Y\\
+A policy maker registers into the Application or logs in if already 
+registered & W & Y\\
+A policy maker checks the performance of a farmer & W & Y\\
+The system processes the performance trend of a farmer (or of all the farmers in an area if we calculate the cumulative) over time & M & N\\
+\noalign{\global\arrayrulewidth=0.3mm}
+\arrayrulecolor{gray}\hline
+A policy maker visualizes the performance trend of a farmer (or of all the farmers in an area if we calculate the cumulative) over time & W & Y\\
+The system sends an alert to a farmer inviting him to perform better/ask for help to an agronomist or other well performing farmers & M & Y\\
+The system notifies a farmer that he improved his performance and he is entitled to receive an incentive & M & Y\\
+The system sends personalized suggestions to a farmer based on computed data & M & Y\\
+A farmer visualizes relevant data on the app & W & Y\\
+A farmer insert in the system the production of a certain period and the corresponding relevant data (note...) &  W & Y\\
+The system combines data to compute how a farmer is performing & M & N\\
+A farmer visualizes his history & W & Y\\
+A farmer makes a request for help to an agronomist & W & Y\\
+\noalign{\global\arrayrulewidth=0.3mm}
+\arrayrulecolor{gray}\hline
+A farmer makes a request for help to other farmers & W & Y\\
+A farmer asks a question on the forum & W & Y\\
+An agronomist insert in the system the mandal he is responsible of & W & Y\\
+The system associates each farmer to the corresponding mandal & M & N\\
+An agronomist receives a help request from a farmer & M & N\\
+An agronomist replies to the help requests sent to him by farmers & W & Y\\
+An agronomist visualize data about one of his mandal's farmers & W & Y\\
+An agronomist visit a farm belonging to his mandal & W & N\\
+An agronomist visualize relevant data on the app & W & Y\\
+An agronomist visualize his daily plan & W & Y\\
+An agronomist update his daily plan & W & Y\\
+An agronomist carries out his daily plan & W & N\\
+An agronomist confirms his daily plan execution & W & Y\\
+An agronomist specifies deviations from his daily plan at the end of the day & W & Y\\
 
 \end{longtable}
