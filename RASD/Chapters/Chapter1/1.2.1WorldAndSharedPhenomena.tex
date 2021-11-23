@@ -12,37 +12,38 @@
 \textbf{Phenomenon} & \textbf{Who controls it?} & \textbf{Is it shared?}\\
 \hline
 
-A farmer signs up to the Application or logs in if already registered & W & Y\\
-An agronomist registers into the Application or logs in if already 
-registered & W & Y\\
-A policy maker registers into the Application or logs in if already 
-registered & W & Y\\
-A policy maker checks the performance of a farmer & W & Y\\
-The system processes the performance trend of a farmer (or of all the farmers in an area if we calculate the cumulative) over time & M & N\\
+A farmer signs up to the application or logs in if already registered & W & Y\\
+\textcolor{red}{Telangana government assigns to each agronomist his ID code} & W & N\\
+An agronomist registers into the application by using his ID code or logs in if already registered & W & Y\\
+\textcolor{red}{Telangana government assigns to each policy maker his ID code} & W & N\\
+A policy maker registers into the application by using his ID code or logs in if already registered & W & Y\\
 \noalign{\global\arrayrulewidth=0.3mm}
 \arrayrulecolor{gray}\hline
-A policy maker visualizes the performance trend of a farmer (or of all the farmers in an area if we calculate the cumulative) over time & W & Y\\
-The system sends an alert to a farmer inviting him to perform better/ask for help to an agronomist or other well performing farmers & M & Y\\
+\textcolor{red}{The system processes the performance of a farmer (or more than one) & M & N}\\
+\textcolor{red}{A policy maker visualizes the performance trend of a farmer (or more than one) over time & W & Y}\\
+\textcolor{red}{A policy maker visualizes the performance score of a farmer (or more than one) & W & Y}\\
+\textcolor{red}{The system notifies a farmer who is not performing well that it would be a good idea to request for help to an agronomist or a well performing farmer & M & Y}\\
 The system notifies a farmer that he improved his performance and he is entitled to receive an incentive & M & Y\\
 The system sends personalized suggestions to a farmer based on computed data & M & Y\\
-A farmer visualizes relevant data on the app & W & Y\\
-A farmer insert in the system the production of a certain period and the corresponding relevant data (note...) &  W & Y\\
-The system combines data to compute how a farmer is performing & M & N\\
-A farmer visualizes his history & W & Y\\
-A farmer makes a request for help to an agronomist & W & Y\\
+\textcolor{red}{A farmer visualizes relevant information which are: weather forecasts, soil moisture and personalized suggestions and visits & W & Y}\\
+\textcolor{red}{A farmer visualizes his history concerning relevant data regarding his production & W & Y}\\
 \noalign{\global\arrayrulewidth=0.3mm}
 \arrayrulecolor{gray}\hline
-A farmer makes a request for help to other farmers & W & Y\\
-A farmer asks a question on the forum & W & Y\\
-An agronomist insert in the system the mandal he is responsible of & W & Y\\
+A farmer insert in the system the production of a certain period and the corresponding relevant data &  W & Y\\
+\textcolor{red}{A farmer makes a request for help to an agronomist and/or a well performing farmer} & W & Y\\
+\textcolor{red}{A farmer opens a thread about a topic on the dedicated forum} & W & Y\\
 The system associates each farmer to the corresponding mandal & M & N\\
+An agronomist inserts in the system the mandal he is responsible of & W & Y\\
 An agronomist receives a help request from a farmer & M & N\\
 An agronomist replies to the help requests sent to him by farmers & W & Y\\
-An agronomist visualize data about one of his mandal's farmers & W & Y\\
-An agronomist visit a farm belonging to his mandal & W & N\\
-An agronomist visualize relevant data on the app & W & Y\\
-An agronomist visualize his daily plan & W & Y\\
-An agronomist update his daily plan & W & Y\\
+\textcolor{red}{An agronomist visualizes data about best performing farmers of his mandal} & W & Y\\
+An agronomist visits a farm belonging to his mandal & W & N\\
+\textcolor{red}{An agronomist visualizes weather forecasts on the app} & W & Y\\
+\noalign{\global\arrayrulewidth=0.3mm}
+\arrayrulecolor{gray}\hline
+\textcolor{red}{The system creates the agronomist's daily plan, guaranteeing at least two visits per year for each farmer & M & N}\\
+An agronomist visualizes his daily plan & W & Y\\
+An agronomist updates his daily plan & W & Y\\
 An agronomist carries out his daily plan & W & N\\
 An agronomist confirms his daily plan execution & W & Y\\
 An agronomist specifies deviations from his daily plan at the end of the day & W & Y\\
