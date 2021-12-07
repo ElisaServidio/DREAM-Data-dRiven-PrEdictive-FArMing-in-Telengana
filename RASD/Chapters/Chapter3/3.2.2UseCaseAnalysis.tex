@@ -43,8 +43,9 @@
   \end{enumerate}
   Exceptions 1 to 3 are handled by not making the "Register now!" button appear and activating an alert message that invites the user to double-check the data entered.\\
   \hline
-\end{tabular}
-\end{table}
+  \end{tabular}
+  \end{table}
+
 
 \begin{table}[H]
 
@@ -136,20 +137,22 @@
       \item The farmer accesses the \textit{Help request} page by clicking on the appropriate icon on the \textit{Home} page.
       \item The farmer clicks on the "Create Help Request" button.
       \item By default the system adds the responsible agronomist to the recipients of the help request.
-      \item The farmer add to the recipient list well performing farmers.
+      \item The farmer decides whether to selects well performing farmers as recipients or not.
       \item The farmer writes the help request in the appropriate field.
       \item The farmer clicks on the "Confirm" button.
+      \item The system adds the parameter "id" to the request.
       \item The system adds the parameter "username" of the farmer to the request.
       \item The system adds the parameter "current date" to the request.
+      \item The system sets the status of the Help Request as created.
       \item The system inserts the data in the database.
-      \item The system updates the \textit{Help Request} page.
+      \item The system updates the \textit{My Help Request} page.
       \item The system returns a message that the help request has been created.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
   \hline
   \footnotesize{\textbf{Exit \newline{conditions}}} & The farmer has successfully send a help request.\\
   \hline
-  \footnotesize{\textbf{Exceptions}} & There are no well performing farmers in his mandal.\\
+  \footnotesize{\textbf{Exceptions}} & The inserted data are not well formatted.\\
   \hline
 \end{tabular}
 \end{table}
@@ -167,11 +170,11 @@
   \begin{enumerate}
       \item The farmer accesses the \textit{Help Request} page by clicking on the appropriate icon on the \textit{Home} page.
       \item The farmer visualize his help requests by clicking on "My Help Request" button.
-      \item The system shows the list of all the help requests of the farmer created, but not solved.
+      \item The system shows the list of all farmers' the help requests created but not solved with related answers.
       \item The system shows two answer buttons "yes" or "no" to the question "Are you satisfied with the answer?" when the farmer receives a response to a help request.
       \item The farmer closes the request for help by declaring that he is satisfied with the answer received by clicking on the "yes" button.
-      \item The system updates the status of the response to solved in the database.
-      \item The system updates the \textit{Help Request} page.
+      \item The system updates the status of the Help Request to solved in the database.
+      \item The system updates the \textit{My Help Request} page.
       \item The system returns a message that the help request has been solved.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
@@ -180,7 +183,7 @@
   \hline
   \footnotesize{\textbf{Exceptions}} & 
  \begin{enumerate}
-      \item There are no farmer help requests created, but not solved.
+      \item All the farmers' Help Requests are already solved.
       \item No one has yet replied to the farmer's help request.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
@@ -191,7 +194,7 @@
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.6 \textit{Farmer searches for a topic on the discussion forum}\\
+  \footnotesize{\textbf{Name}} & UC.6 \textit{Farmer finds a topic on the discussion forum}\\
   \hline
   \footnotesize{\textbf{Actors}} & Farmer\\ 
   \hline
@@ -212,7 +215,7 @@
   \footnotesize{\textbf{Exceptions}} & 
  \begin{enumerate}
       \item There are no existing threads related to a certain topic on the discussion forum. In this case, the system suggests to attempt a new research or to open a new thread.
-      \item The farmer does not fill out the form with the mandatory data.
+      \item The inserted data are not well formatted.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
   \hline
@@ -235,6 +238,9 @@
       \item The system shows a form to be filled in with the the mandatory fields \textit{topic} and \textit{text}.
       \item The farmer inserts mandatory data.
       \item The farmer confirms by clicking on the corresponding button.
+      \item The system adds the id to the thread.
+      \item The system adds the username of the farmer to the thread.
+      \item The system adds the current date to the thread.
       \item The system updates the \textit{Discussion Forum} page.
       \item The system returns a message that the thread has been created on the discussion forum.
       \vspace*{-\baselineskip}
@@ -266,8 +272,11 @@
       \item The system shows a form to be filled in with the mandatory field \textit{text}.
       \item The farmer inserts mandatory data.
       \item The farmer confirms by clicking on the corresponding button.
-      \item The system associates the response of the farmer to the thread on the discussion forum.
-      \item The system updates the thread page.
+      \item The system adds the username of the farmer to the post as responder.
+      \item The system adds the username of the farmer how opened the thread to the post as questioner.
+      \item The system adds the current date to the post.
+      \item The system associates the post of the farmer to the thread on the discussion forum adding the thread id.
+      \item The system updates the \textit{Thread} page.
       \item The system returns a message that the farmer has successfully answered to a thread on the discussion forum.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
@@ -295,6 +304,7 @@
       \item The system shows a form to be filled in with mandatory fields \textit{date} and \textit{farmer}.
       \item The agronomist inserts mandatory data in corresponding fields.
        \item The agronomist confirms by clicking on the corresponding button.
+       \item The system changes the status of the daily plan into updated in the DB.
        \item The system updates the \textit{Daily Plan} page.
       \item The system returns a message that the agronomist has successfully updated his daily plan.
       \vspace*{-\baselineskip}
@@ -304,9 +314,9 @@
   \hline 
   \footnotesize{\textbf{Exceptions}} & 
  \begin{enumerate}
-      \item The farmer does not fill out the form with the mandatory data.
+      \item The agronomist does not fill out the form with the mandatory data.
       \item The date entered by the agronomist in the corresponding field refers to a day in the past.
-      \item The farmer entered by the agronomist in the corresponding field doesn't refer to any of those under his responsibility.
+      \item The agronomist entered by the agronomist in the corresponding field doesn't refer to any of those under his responsibility.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
   \hline
@@ -329,6 +339,7 @@
       \item The system shows a form to be filled in with optional field \textit{deviations}.
       \item The agronomist fills in the form.
       \item The agronomist confirms by clicking on the corresponding button.
+      \item The system changes the status of the daily plan into done in the DB.
       \item The system updates the \textit{Daily Plan} page.
       \item The  system  returns  a  message  that  the agronomist has successfully confirmed his daily plan.
       \vspace*{-\baselineskip}
@@ -351,8 +362,9 @@
   \footnotesize{\textbf{Flow \newline{of events}}} & 
   \begin{enumerate}
       \item The agronomist receives a notification from the system informing him that a help request has been created.
+      \item The agronomist clicks on the notification icon.
+      \item The system redirects the agronomist to the \textit{Notification} page and displays a list of help requests received in chronological order and the details associated to the notifications received.
       \item The agronomist clicks on the notification "Read More" button to know the details of the new help request received.
-      \item The system redirects the agronomist to the \textit{Help Request} page and displays a list of help requests received in chronological order and the details associated to the notification received.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
   \hline
@@ -379,7 +391,10 @@
       \item The system shows the agronomist a form to be filled in with mandatory field \textit{text}.
       \item The agronomist fills in the form.
       \item The agronomist confirms by clicking on the corresponding button.
-      \item The system associates the response of the agronomist to the help request.
+      \item The system adds the agronomist as responder to the response.
+      \item The system adds the farmer who made the Help Request as questioner to the response.
+      \item The system adds the current date to the response.
+      \item The system associates the response of the agronomist to the help request though the id req.
       \item The system updates the \textit{Help Request} page.
       \item The  system  returns  a  message  that  the agronomist has successfully replied to the help request.
       \vspace*{-\baselineskip}
@@ -387,7 +402,7 @@
   \hline
   \footnotesize{\textbf{Exit \newline{conditions}}} & The agronomist has successfully replied to the help request.\\
   \hline
-  \footnotesize{\textbf{Exceptions}} & The agronomist does not fill out the form with the mandatory data.\\
+  \footnotesize{\textbf{Exceptions}} & The inserted data are not well formatted.\\
   \hline
 \end{tabular}
 \end{table}
@@ -404,13 +419,16 @@
   \footnotesize{\textbf{Flow \newline{of events}}} &
   \begin{enumerate}
       \item The farmer accesses the \textit{Help Request} page by clicking on the appropriate icon on the \textit{Home} page.
-      \item The system shows a list of help requests created and not yet solved.
+      \item The system shows a list of help requests created and not yet solved sent to him being a well performing farmer.
       \item The farmer reads the details of a help request received by clicking on it.
       \item The farmer clicks on the button "Reply" associated to the help request received.
       \item The system shows the farmer a form to be filled in with mandatory field \textit{text}. 
       \item The farmer fills in the form.
       \item The farmer confirms by clicking on the corresponding button.
-      \item The system associates the response of the farmer to the help request.
+      \item The system adds the farmer as responder to the response.
+      \item The system adds the farmer who made the Help Request as questioner to the response.
+      \item The system adds the current date to the response.
+      \item The system associates the response to the corresponding help request though the id req.
       \item The system updates the \textit{Help Request} page.
       \item The  system  returns  a  message  that  the farmer has successfully replied to the help request.
       \vspace*{-\baselineskip}
@@ -418,7 +436,7 @@
   \hline
   \footnotesize{\textbf{Exit \newline{conditions}}} & The farmer has successfully replied to the help request.\\
   \hline
-  \footnotesize{\textbf{Exceptions}} & The farmer does not fill out the form with the mandatory data.\\
+  \footnotesize{\textbf{Exceptions}} & The inserted data are not well formatted.\\
   \hline
 \end{tabular}
 \end{table}
@@ -441,8 +459,10 @@
   \footnotesize{\textbf{Flow \newline{of events}}} &
   \begin{enumerate}
       \item The farmer receives a notification from the system.
+      \item The farmer clicks on the notification icon.
+      \item The system redirects the farmer to the Notification page and displays a list of notifications received in chronological order and the details associated to the notifications received.
       \item The farmer clicks on the notification "Read More" button to know the details of it.
-      \item The system redirects the farmer to the \textit{Notification} page and displays a list of notifications received in chronological order and the details associated to the notification received.
+      \item The system returns the details associated to the notification received.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
   \hline
@@ -463,7 +483,7 @@
   \footnotesize{\textbf{Flow \newline{of events}}} &
   \begin{enumerate}
       \item The system shows the map of the mandal associated to the agronomist with all related farmers' performance scores.
-      \item The system shows the table of best performing farmers with related data. 
+      \item The system shows the table of farmers' performance in ascending order based on their performance score.
       \item The agronomist clicks on a certain performance score icon on the map.
       \item The system provides him a pop up in which are listed name, phone number, email, address and performance score of that farmer.
       \vspace*{-\baselineskip}
