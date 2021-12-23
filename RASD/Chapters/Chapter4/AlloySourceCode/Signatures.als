@@ -26,7 +26,7 @@ id: one Int,
 questionner: one Farmer,
 post : set Post } { id > 0 }
 
-// A Post in the Discussion Forum
+// A Post in a Thread
 sig Post  { 
 id: one Int,
 responder: one Farmer } { id > 0 }
@@ -48,7 +48,7 @@ deviation: lone Deviation }
 sig Deviation { }
 
 abstract sig DailyPlanState { }
-
+//To avoid logical error due to the homonymy with HelpRequestState, DailyPlanState CREATED has been modified into GENERATED
 one sig GENERATED extends DailyPlanState { }
 one sig UPDATED extends DailyPlanState { 
 selectedHour: one Hour,

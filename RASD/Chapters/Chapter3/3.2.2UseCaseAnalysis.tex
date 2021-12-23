@@ -21,6 +21,7 @@
       \item The unregistered user selects which category of users he/she belongs to: "Policy Maker", "Farmer" or "Agronomist".
       \item The system provides the user with the appropriate fields to fill.
       \item The unregistered user fills in all the mandatory fields.
+      \item The unregistered user accepts terms and conditions.
       \item The unregistered user clicks on the "Register" button.
       \item The system saves data of the new user.
       \item The system sends an email to the new user.
@@ -39,6 +40,7 @@
       \item The unregistered user does not fill in all the required fields.
       \item The unregistered user inserts a username that is not available.
       \item The user does not confirm his/her email by clicking on the link within ten minutes.
+      \vspace*{-\baselineskip}
   \end{itemize}\\
   \hline
   \end{tabular}
@@ -98,7 +100,7 @@
       \item The system adds the parameter "username" of the farmer to the request.
       \item The system adds the parameter "current date" to the request.
       \item The system adds the parameter "quantity of water consumed" to the request.
-      \item The system inserts the data in the database.
+      \item The system updates farmer's performance.
       \item The system refresh the \textit{Home} page.
       \item The system returns a message that the information has been added.
       \vspace*{-\baselineskip}
@@ -120,7 +122,87 @@
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.4 \textit{Farmer makes a help request}\\
+  \footnotesize{\textbf{Name}} & UC.4 \textit{Agronomist visualizes data regarding farmers}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Agronomist\\ 
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in and wants to analyse data regarding farmers\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} &
+  \begin{enumerate}
+      \item The system shows the map of the mandal associated to the agronomist with all related farmers' performance scores.
+      \item The system shows the table of farmers' performance in ascending order based on their performance score.
+      \item The agronomist clicks on a certain performance score icon on the map.
+      \item The system provides him/her a pop up in which are listed name, phone number and performance score of that farmer.
+      \vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & Data are shown and can be analysed by the agronomist.\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.5 \textit{Policy maker visualizes data regarding farmers}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Policy maker\\
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Policy maker has already logged in and wants to analyse data regarding farmers\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} &
+  \begin{enumerate}
+      \item The system shows Telangana map in which are displayed all related farmers' most recent performance scores using different colours to differentiate bad and well performing farmers.
+      \item In the map section in the Home page the policy maker selects:
+      \begin{enumerate}
+          \item mandal he/she wants to visualize (by default mandal field is set \textit{all}).
+          \item data he/she wants to visualize (by default data field is set \textit{performance score}).
+          \item operation he/she wants to compute data with (by default operation field is set \textit{null}). 
+      \end{enumerate}
+      \item The system shows the map according to the previously selected options. 
+      \item The policy maker clicks on a certain data icon on the map.
+      \item The system provides him/her a pop up in which are listed name, performance score, type and quantity of product harvested and quantity of water consumed of that farmer.\vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & Data are shown and can be analysed by the policy maker.\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.6 \textit{Policy maker analyzes data regarding farmers}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Policy maker\\
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Policy maker has already logged in and wants to analyse data regarding farmers.\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} &
+  \begin{enumerate}
+      \item In the time chart section in the \textit{Home} page the policy maker selects:
+      \begin{enumerate}
+        \item mandal he/she wants to analyze (by default mandal field is set \textit{all});
+        \item data he/she wants to analyze (by default data field is set \textit{performance score});
+        \item operation he/she wants to compute data with (by default operation field is set \textit{null});
+        \item time interval, which is set \textit{last year} by default;
+        \item whether to check only farmer with at least an help request solved or not (by default this field is not checked).
+      \end{enumerate}
+      \item The system shows the time chart with selected data. 
+      \vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & Time chart is shown and can be analysed by the policy maker.\\
+  \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.7 \textit{Farmer makes a help request}\\
   \hline
   \footnotesize{\textbf{Actors}} & Farmer\\ 
   \hline
@@ -137,8 +219,7 @@
       \item The system adds the parameter "id" to the request.
       \item The system adds the parameter "username" of the farmer to the request.
       \item The system adds the parameter "current date" to the request.
-      \item The system sets the status of the help request as created.
-      \item The system inserts the data in the database.
+      \item The system updates the status of the help request as created.
       \item The system updates the \textit{My Help Request} page.
       \item The system returns a message that the help request has been created.
       \vspace*{-\baselineskip}
@@ -151,10 +232,83 @@
 \end{tabular}
 \end{table}
 
+
+
+
+
+
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.5 \textit{Farmer solves a help request}\\
+  \footnotesize{\textbf{Name}} & UC.8 \textit{Agronomist replies to a help request}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Agronomist\\ 
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in and has already received a notification about a new help request received not yet solved.\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} & 
+  \begin{enumerate}
+      \item The agronomist accesses the \textit{Help Request} page by clicking on the appropriate icon on the \textit{Home} page.
+      \item The system shows a list of help requests created and not yet solved.
+      \item The agronomist reads the details of the new help request received by clicking on it.
+      \item The agronomist clicks on the button "Reply" associated to the help request received.
+      \item The system shows the agronomist a form to be filled in with mandatory field \textit{text}.
+      \item The agronomist fills in the form.
+      \item The agronomist confirms by clicking on the corresponding button.
+      \item The system adds the agronomist as responder to the response.
+      \item The system adds the farmer who made the help request as questioner to the response.
+      \item The system adds the current date to the response.
+      \item The system associates the response of the agronomist to the help request though the "id req".
+      \item The system updates the \textit{Help Request} page.
+      \item The  system  returns  a  message  that  the agronomist has successfully replied to the help request.
+      \vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & The agronomist has successfully replied to the help request.\\
+  \hline
+  \footnotesize{\textbf{Exceptions}} & The inserted data are not well formatted.\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.9 \textit{Farmer replies to a help request}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Farmer\\ 
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Farmer has already logged in and his/her performance score computed by the system identifies him/her as a \textit{Well performing farmer}. He/She has already received a notification about a new help request received not yet solved.\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} &
+  \begin{enumerate}
+      \item The farmer accesses the \textit{Help Request} page by clicking on the appropriate icon on the \textit{Home} page.
+      \item The system shows a list of help requests created and not yet solved sent to him/her being a well performing farmer.
+      \item The farmer reads the details of a help request received by clicking on it.
+      \item The farmer clicks on the button "Reply" associated to the help request received.
+      \item The system shows the farmer a form to be filled in with mandatory field \textit{text}. 
+      \item The farmer fills in the form.
+      \item The farmer confirms by clicking on the corresponding button.
+      \item The system adds the farmer as responder to the response.
+      \item The system adds the farmer who made the help request as questioner to the response.
+      \item The system adds the current date to the response.
+      \item The system associates the response to the corresponding help request though the id req.
+      \item The system updates the \textit{Help Request} page.
+      \item The  system  returns  a  message  that  the farmer has successfully replied to the help request.
+      \vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & The farmer has successfully replied to the help request.\\
+  \hline
+  \footnotesize{\textbf{Exceptions}} & The inserted data are not well formatted.\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.10 \textit{Farmer solves a help request}\\
   \hline
   \footnotesize{\textbf{Actors}} & Farmer\\ 
   \hline
@@ -167,7 +321,7 @@
       \item The system shows the list of all farmers' the help requests created but not solved with related answers.
       \item The system shows two answer buttons "Yes" or "No" to the question "Are you satisfied with the answer?" when the farmer receives a response to a help request.
       \item The farmer closes the request for help by declaring that he/she is satisfied with the answer received by clicking on the "yes" button.
-      \item The system updates the status of the help request to solved in the database.
+      \item The system updates the status of the help request to solved.
       \item The system updates the \textit{My Help Request} page.
       \item The system returns a message that the help request has been solved.
       \vspace*{-\baselineskip}
@@ -188,7 +342,7 @@
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.6 \textit{Farmer finds a topic on the discussion forum}\\
+  \footnotesize{\textbf{Name}} & UC.11 \textit{Farmer finds a topic on the discussion forum}\\
   \hline
   \footnotesize{\textbf{Actors}} & Farmer\\ 
   \hline
@@ -200,7 +354,7 @@
       \item The farmer clicks on the corresponding button.
       \item The system shows a form to be filled in with the mandatory field \textit{topic}.
       \item The farmer inserts the topic to be found.
-      \item The farmer makes the research.
+      \item The farmer submit the form.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
   \hline
@@ -219,7 +373,7 @@
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|}  
   \hline
-  \footnotesize{\textbf{Name}} & UC.7 \textit{Farmer opens a thread on the discussion forum}\\
+  \footnotesize{\textbf{Name}} & UC.12 \textit{Farmer opens a thread on the discussion forum}\\
   \hline
   \footnotesize{\textbf{Actors}} & Farmer\\ 
   \hline
@@ -250,7 +404,7 @@
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.8 \textit{Farmer replies on the discussion forum}\\
+  \footnotesize{\textbf{Name}} & UC.13 \textit{Farmer replies on the discussion forum}\\
   \hline
   \footnotesize{\textbf{Actors}} & Farmer\\ 
   \hline
@@ -283,9 +437,30 @@
 \end{table}
 
 \begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.14 \textit{Agronomist visualizes daily plan}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Agronomist\\ 
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in.\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} &
+  \begin{enumerate}
+      \item The agronomist accesses the \textit{Daily Plan} page by clicking on the appropriate icon on the \textit{Home} page.
+      \vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & The system shows the daily plan of the current day.\\
+  \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|}  
   \hline
-  \footnotesize{\textbf{Name}} & UC.9 \textit{Agronomist updates daily plan}\\
+  \footnotesize{\textbf{Name}} & UC.15 \textit{Agronomist updates daily plan}\\
   \hline
   \footnotesize{\textbf{Actors}} & Agronomist\\ 
   \hline
@@ -298,7 +473,7 @@
       \item The system shows a form to be filled in with mandatory fields \textit{date} and \textit{farmer}.
       \item The agronomist inserts mandatory data in corresponding fields.
        \item The agronomist confirms by clicking on the corresponding button.
-       \item The system changes the status of the daily plan into updated in the DB.
+       \item The system updates the status of the daily plan into updated.
        \item The system updates the \textit{Daily Plan} page.
       \item The system returns a message that the agronomist has successfully updated his/her daily plan.
       \vspace*{-\baselineskip}
@@ -320,7 +495,7 @@
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.10 \textit{Agronomist confirms daily plan}\\
+  \footnotesize{\textbf{Name}} & UC.16 \textit{Agronomist confirms daily plan}\\
   \hline
   \footnotesize{\textbf{Actors}} & Agronomist\\ 
   \hline
@@ -333,7 +508,7 @@
       \item The system shows a form to be filled in with optional field \textit{deviations}.
       \item The agronomist fills in the form.
       \item The agronomist confirms by clicking on the corresponding button.
-      \item The system changes the status of the daily plan into done in the DB.
+      \item The system updates the status of the daily plan into done.
       \item The system updates the \textit{Daily Plan} page.
       \item The  system  returns  a  message  that  the agronomist has successfully confirmed his/her daily plan.
       \vspace*{-\baselineskip}
@@ -344,230 +519,16 @@
 \end{tabular}
 \end{table}
 
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.11 \textit{Agronomist receives notifications}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Agronomist\\ 
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in and a new help request has been created and not yet solved.\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} & 
-  \begin{enumerate}
-      \item The agronomist receives a notification from the system informing him/her that a help request has been created.
-      \item The agronomist clicks on the notification icon.
-      \item The system redirects the agronomist to the \textit{Notification} page and displays a list of help requests received in chronological order and the details associated to the notifications received.
-      \item The agronomist clicks on the notification "Read More" button to know the details of the new help request received.
-      \vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & Agronomist is aware of the presence of a new help request.\\
-  \hline
-\end{tabular}
-\end{table}
+
+
+
+
+
 
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.12 \textit{Agronomist replies to a help request}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Agronomist\\ 
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in and has already received a notification about a new help request received not yet solved.\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} & 
-  \begin{enumerate}
-      \item The agronomist accesses the \textit{Help Request} page by clicking on the appropriate icon on the \textit{Home} page.
-      \item The system shows a list of help requests created and not yet solved.
-      \item The agronomist reads the details of the new help request received by clicking on it.
-      \item The agronomist clicks on the button "Reply" associated to the help request received.
-      \item The system shows the agronomist a form to be filled in with mandatory field \textit{text}.
-      \item The agronomist fills in the form.
-      \item The agronomist confirms by clicking on the corresponding button.
-      \item The system adds the agronomist as responder to the response.
-      \item The system adds the farmer who made the help request as questioner to the response.
-      \item The system adds the current date to the response.
-      \item The system associates the response of the agronomist to the help request though the id req.
-      \item The system updates the \textit{Help Request} page.
-      \item The  system  returns  a  message  that  the agronomist has successfully replied to the help request.
-      \vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & The agronomist has successfully replied to the help request.\\
-  \hline
-  \footnotesize{\textbf{Exceptions}} & The inserted data are not well formatted.\\
-  \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.13 \textit{Farmer replies to a help request}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Farmer\\ 
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Farmer has already logged in and his/her performance score computed by the system identifies him/her as a \textit{Well Performing Farmer}. He/She has already received a notification about a new help request received not yet solved.\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} &
-  \begin{enumerate}
-      \item The farmer accesses the \textit{Help Request} page by clicking on the appropriate icon on the \textit{Home} page.
-      \item The system shows a list of help requests created and not yet solved sent to him/her being a well performing farmer.
-      \item The farmer reads the details of a help request received by clicking on it.
-      \item The farmer clicks on the button "Reply" associated to the help request received.
-      \item The system shows the farmer a form to be filled in with mandatory field \textit{text}. 
-      \item The farmer fills in the form.
-      \item The farmer confirms by clicking on the corresponding button.
-      \item The system adds the farmer as responder to the response.
-      \item The system adds the farmer who made the help request as questioner to the response.
-      \item The system adds the current date to the response.
-      \item The system associates the response to the corresponding help request though the id req.
-      \item The system updates the \textit{Help Request} page.
-      \item The  system  returns  a  message  that  the farmer has successfully replied to the help request.
-      \vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & The farmer has successfully replied to the help request.\\
-  \hline
-  \footnotesize{\textbf{Exceptions}} & The inserted data are not well formatted.\\
-  \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.14 \textit{Farmer receives notifications}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Farmer\\ 
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Farmer has already logged in and at least one of the following events has occurred: \begin{itemize}
-      \item The system has computed suggestions according to his/her relevant information regarding his/her production and his/her farm’s position.
-      \item New visits have been scheduled in the daily plan regarding him/her.
-      \item Someone has replied to his/her own help requests not yet solved.
-      \item Someone has replied to his/her own threads opened on the Discussion Forum.
-      \vspace*{-\baselineskip}
-  \end{itemize}\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} &
-  \begin{enumerate}
-      \item The farmer receives a notification from the system.
-      \item The farmer clicks on the notification icon.
-      \item The system redirects the farmer to the Notification page and displays a list of notifications received in chronological order and the details associated to the notifications received.
-      \item The farmer clicks on the notification "Read More" button to know the details of it.
-      \item The system returns the details associated to the notification received.
-      \vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & Farmer is aware of the presence of a new notification.\\
-  \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.15 \textit{Agronomist visualizes data regarding farmers}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Agronomist\\ 
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in and wants to analyse data regarding farmers\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} &
-  \begin{enumerate}
-      \item The system shows the map of the mandal associated to the agronomist with all related farmers' performance scores.
-      \item The system shows the table of farmers' performance in ascending order based on their performance score.
-      \item The agronomist clicks on a certain performance score icon on the map.
-      \item The system provides him/her a pop up in which are listed name, phone number, email, address and performance score of that farmer.
-      \vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & Data are shown and can be analysed by the agronomist.\\
-  \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.16 \textit{Policy maker visualizes data regarding farmers}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Policy maker\\
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Policy maker has already logged in and wants to analyse data regarding farmers\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} &
-  \begin{enumerate}
-      \item The system shows Telangana map in which are displayed all related farmers' most recent performance scores using different colours to differentiate bad and well performing farmers.
-      \item In the map section in the Home page the policy maker selects:
-      \begin{enumerate}
-          \item mandal he/she wants to visualize (by default mandal field is set \textit{all}).
-          \item data he/she wants to visualize (by default data field is set \textit{performance score}).
-          \item operation he/she wants to compute data with (by default operation field is set \textit{null}). 
-      \end{enumerate}
-      \item The system shows the map according to the previously selected options. 
-      \item The policy maker clicks on a certain data icon on the map.
-      \item The system provides him/her a pop up in which are listed name, performance score, type and quantity of product harvested and quantity of water consumed of that farmer.\vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & Data are shown and can be analysed by the policy maker\\
-  \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.17 \textit{Policy maker analyzes data regarding farmers}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Policy maker\\
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Policy maker has already logged in and wants to analyse data regarding farmers.\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} &
-  \begin{enumerate}
-      \item In the time chart section in the Home page the policy maker selects:
-      \begin{enumerate}
-        \item mandal he/she wants to analyze (by default mandal field is set \textit{all});
-        \item data he/she wants to analyze (by default data field is set \textit{performance score});
-        \item operation he/she wants to compute data with (by default operation field is set \textit{null});
-        \item time interval, which is set \textit{last year} by default;
-        \item whether to check only farmer with at least an help request solved or not (by default this field is not checked).
-      \end{enumerate}
-      \item The system shows the time chart with selected data. 
-      \vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & Time chart is shown and can be analysed by the policy maker.\\
-  \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.18 \textit{Agronomist visualizes daily plan}\\
-  \hline
-  \footnotesize{\textbf{Actors}} & Agronomist\\ 
-  \hline
-  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in.\\
-  \hline
-  \footnotesize{\textbf{Flow \newline{of events}}} &
-  \begin{enumerate}
-      \item The agronomist accesses the \textit{Daily Plan} page by clicking on the appropriate icon on the \textit{Home} page.
-      \vspace*{-\baselineskip}
-  \end{enumerate}\\
-  \hline
-  \footnotesize{\textbf{Exit \newline{conditions}}} & The system shows the daily plan of the current day.\\
-  \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\begin{tabular}{|m{1.8cm}|m{10cm}|} 
-  \hline
-  \footnotesize{\textbf{Name}} & UC.19 \textit{Agronomist visualizes weather forecasts and soil moisture of his/her associated mandal}\\
+  \footnotesize{\textbf{Name}} & UC.17 \textit{Agronomist visualizes weather forecasts and soil moisture of his/her associated mandal}\\
   \hline
   \footnotesize{\textbf{Actors}} & Agronomist\\ 
   \hline
@@ -591,7 +552,7 @@
 \begin{table}[H]
 \begin{tabular}{|m{1.8cm}|m{10cm}|} 
   \hline
-  \footnotesize{\textbf{Name}} & UC.20 \textit{Farmers visualizes relevant information}\\
+  \footnotesize{\textbf{Name}} & UC.18 \textit{Farmers visualizes relevant information}\\
   \hline
   \footnotesize{\textbf{Actors}} & Farmer\\ 
   \hline
@@ -600,12 +561,65 @@
   \footnotesize{\textbf{Flow \newline{of events}}} &
   \begin{enumerate}
       \item The system shows on the \textit{Home} page weather conditions and soil moisture regarding farmer's position and the next visit scheduled by the associated agronomist.
-      \item The farmer accesses the \textit{Visits} page by clicking on the associated icon on the \textit{Home} page.
+      \item The farmer accesses the \textit{Visit} page by clicking on the associated icon on the \textit{Home} page.
       \item The system shows the list of scheduled visits (even the ones that have already occurred in the past) in chronological order.
       \vspace*{-\baselineskip}
   \end{enumerate}\\
   \hline
   \footnotesize{\textbf{Exit \newline{conditions}}} & The farmer has successfully visualized relevant information regarding him/her.\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.19 \textit{Agronomist receives notifications}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Agronomist\\ 
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Agronomist has already logged in and a new help request has been created and not yet solved.\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} & 
+  \begin{enumerate}
+      \item The agronomist receives a notification from the system informing him/her that a help request has been created.
+      \item The agronomist clicks on the notification icon.
+      \item The system redirects the agronomist to the \textit{Notification} page and displays a list of help requests received in chronological order and the details associated to the notifications received.
+      \item The agronomist clicks on the notification to know the details of the new help request received.
+      \vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & Agronomist is aware of the presence of a new help request.\\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|m{1.8cm}|m{10cm}|} 
+  \hline
+  \footnotesize{\textbf{Name}} & UC.20 \textit{Farmer receives notifications}\\
+  \hline
+  \footnotesize{\textbf{Actors}} & Farmer\\ 
+  \hline
+  \footnotesize{\textbf{Entry \newline{conditions}}} & Farmer has already logged in and at least one of the following events has occurred: \begin{itemize}
+      \item The system has computed suggestions according to his/her relevant information regarding his/her production and his/her farm’s position.
+      \item New visits have been scheduled in the daily plan regarding him/her.
+      \item Someone has replied to his/her own help requests not yet solved.
+      \item Someone has replied to his/her own threads opened on the Discussion Forum.
+      \vspace*{-\baselineskip}
+  \end{itemize}\\
+  \hline
+  \footnotesize{\textbf{Flow \newline{of events}}} &
+  \begin{enumerate}
+      \item The farmer receives a notification from the system.
+      \item The farmer clicks on the notification icon.
+      \item The system redirects the farmer to the Notification page and displays a list of notifications received in chronological order and the details associated to the notifications received.
+      \item The farmer clicks on the notification to know the details of it.
+      \item The system returns the details associated to the notification received.
+      \vspace*{-\baselineskip}
+  \end{enumerate}\\
+  \hline
+  \footnotesize{\textbf{Exit \newline{conditions}}} & Farmer is aware of the presence of a new notification.\\
   \hline
 \end{tabular}
 \end{table}
