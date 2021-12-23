@@ -6,41 +6,58 @@ In this section are shown the three different Generated Worlds, one for each com
 
 \begin{figure}[H]
   \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{./Images/Alloy/predicatesExecution.png}
+           \vspace*{-0.5cm}
   \caption{Alloy Analysis Results}
 \end{figure}
 
-\newpage
-\KOMAoptions{paper=landscape,pagesize}
-\recalctypearea
-\begin{center}
-\begin{sidewaysfigure}[H]
-    \includegraphics[width=\textwidth]{./Images/Alloy/DiscussionForum.png}
+
+
+\def\fillandplacepagenumber{%
+ \par\pagestyle{empty}%
+\vbox to 0pt{\vss}\vfill
+\vbox to 0pt{\baselineskip0pt
+   \hbox to\linewidth{\hss}%
+   \setlength{\footskip}{70pt}
+   \baselineskip\footskip
+   \hbox to\linewidth{%
+     \hfil\thepage\hfil}\vss}}
+
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{-2cm}
+\noindent
+\centering
+\centerline{\includegraphics[scale = 0.6]{./Images/Alloy/DiscussionForum.png}}
     \caption{Generated World0 - Discussion Forum}
-    \label{fig:LandscapeFigure}
-\end{sidewaysfigure}
-\end{center}
+    \vspace*{-12cm}
+\end{figure}
+\fillandplacepagenumber
+\end{landscape}
+
 
 \newpage
-\KOMAoptions{paper=landscape,pagesize}
-\recalctypearea
-\begin{center}
-\begin{figure}[H]
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{-2cm}
+\noindent
 \centering
-  \includegraphics[angle = 90,scale= 0.4]{./Images/Alloy/DailyPlan.png}
+\centerline{\includegraphics[scale= 0.6]{./Images/Alloy/DailyPlan.png}}
+    \vspace*{-0.5cm}
   \caption{Generated World1 - Daily Plan}
-    \label{fig:LandscapeFigure}
+    \vspace*{-12cm}
 \end{figure}
-\end{center}
+    \fillandplacepagenumber
+\end{landscape}
 
 \newpage
-\KOMAoptions{paper=landscape,pagesize}
-\recalctypearea
-\begin{center}
-\begin{figure}[H]
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{1cm}
+\noindent
 \centering
-  \includegraphics[angle=90,scale= 0.5]{./Images/Alloy/HelpRequest.png}
+\centerline{\includegraphics[scale= 0.6]{./Images/Alloy/HelpRequest.png}}
   \caption{Generated World2 - Help Request}
-    \label{fig:LandscapeFigure}
+    \vspace*{-3cm}
 \end{figure}
-\end{center}
-
+    \fillandplacepagenumber
+\end{landscape}
