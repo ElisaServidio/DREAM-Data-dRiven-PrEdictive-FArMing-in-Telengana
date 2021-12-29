@@ -16,6 +16,21 @@ All components within the diagram are described in detail below.
 
 \item \textbf{MobileApplication}: it manages all user interactions with the mobile application and associates them with the required functions.
 
+\item \textbf{AuthenticationService}: it is necessary for every type of user who wants to access the application (both from the mobile app and the web app) and use it according to the permissions he/she possesses, therefore according to the role with which he/she is registered.
+
+\item \textbf{RegistrationService}: This component includes the following subcomponent.
+
+\begin{itemize}
+
+\item \textbf{EmailManager}: it is necessary when a user who has not yet registered wants to register. To verify his/her email during registration, the system automatically sends a confirmation email to the user who wants to register and activates a 10-minute timer within which the user must confirm his/her registration.
+\end{itemize}
+\item \textbf{PolicyMakerService}: This component includes the following subcomponents.
+
+\begin{itemize}
+    \item \textbf{TimeChartService}: it computes and displays Telangana’s farmers data in a graph so that the policy maker can analyze the various parameters of interest over time.
+    \item \textbf{MapService}: it computes and displays Telangana’s farmers performance map using some filter. In order to collect all the data of interest, the component must be connected to the DatabaseAccess component. 
+\end{itemize}
+
 \item \textbf{AgronomistService}: This component includes the following subcomponents.
 
 \begin{itemize}
@@ -33,23 +48,12 @@ All components within the diagram are described in detail below.
     \item \textbf{HelpRequestService}: it is necessary for the creation and subsequent management of help requests by the farmer. The connection to DatabaseAccess component allows it to retrieve the recipients to whom the request can be sent (mandal agronomist and well performing farmers).\\
     In addition, if a farmer who is well performing has received a request for help from another farmer, this component takes care of managing the function that allows the farmer to respond to the request.
     \item \textbf{DiscussionForumService}: it manages the creation of posts by a farmer on the discussion forum, the creation of threads in response to a specific post (always by other farmers) and the search by topic of posts already created. It also performs these functions thanks to the connection to the DatabaseAccess component.
-    \item \textbf{PerformanceService}: it takes care of updating a farmer's performance data every time he/she  enters new data about his/her crop. Not only is it necessary to connect to the DatabaseAccess, but also to external APIs to retrieve the following data: soil moisture (retrieved from CopernicusClimateDataStoreService) and quantity of water consumed (retrieved from TelanganaWaterIrrigationService).
+    \item \textbf{PerformanceService}: it takes care of updating a farmer's performance data every time he/she  enters new data about his/her crop. Not only is it necessary to connect to the DatabaseAccess, but also to external APIs to retrieve the following data: soil moisture (retrieved from CopernicusClimateDataStoreService), quantity of water consumed (retrieved from TelanganaWaterIrrigationService) and weather conditions (retrieved from TelanganaGovernmentService).
     \item \textbf{VisitService}: it retrieve the visits that each farmer has from the agronomist in charge of his/her mandal. To retrieve them from the database, this component must be connected to the DatabaseAccess component.
     \item \textbf{WeatherConditionService}: it collects the data related to the weather conditions in the position of a certain farmer's farm for the current day. To do this, it needs to be connected to the external API TelanganaGovernmentService as well as to the DatabaseAccess component.
     \item \textbf{SuggestionsService}: it takes care of calculating the suggestions of a farmer based on his/her relevant information regarding his/her production and the position of his/her farm, data obtained thanks to the connection to the DatabaseAccess component.
     \item \textbf{NotificationFarmerService}: it deals with managing all notifications addressed to a specific farmer, in particular he/she receives notifications based on personalized suggestions, scheduled visits, help requests, replies to posts created by him/her. In order to retrieve the notification of interest, this component is connected with the DatabaseAccess component.
 \end{itemize}
-
-\item \textbf{PolicyMakerService}: This component includes the following subcomponents.
-
-\begin{itemize}
-    \item \textbf{TimeChartService}: it computes and displays Telangana’s farmers data in a graph so that the policy maker can analyze the various parameters of interest over time.
-    \item \textbf{MapService}: it computes and displays Telangana’s farmers performance map using some filter. In order to collect all the data of interest, the component must be connected to the DatabaseAccess component. 
-\end{itemize}
-
-\item \textbf{AuthenticationService}: it is necessary for every type of user who wants to access the application (both from the mobile app and the web app) and use it according to the permissions he/she possesses, therefore according to the role with which he/she is registered.
-
-\item \textbf{EmailManager}: it is necessary when a user who has not yet registered wants to register. To verify his/her email during registration, the system automatically sends a confirmation email to the user who wants to register and activates a 10-minute timer within which the user must confirm his/her registration.
 
 \item \textbf{DatabaseAccess}: it is responsible to get data from a data source. In fact, it manages the access to the database.
 
@@ -70,12 +74,26 @@ All components within the diagram are described in detail below.
 
 \end{itemize}
 
-\newpage
 
-\begin{center}
-    \begin{figure}[h!]
-  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{./Images/Component diagram.png}
-  \caption{Component diagram}
+\def\fillandplacepagenumber{%
+ \par\pagestyle{empty}%
+\vbox to 0pt{\vss}\vfill
+\vbox to 0pt{\baselineskip0pt
+   \hbox to\linewidth{\hss}%
+   \setlength{\footskip}{70pt}
+   \baselineskip\footskip
+   \hbox to\linewidth{%
+     \hfil\thepage\hfil}\vss}}
+
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{-2cm}
+\noindent
+\centering
+\centerline{\includegraphics[scale = 0.2]{./Images/Component diagram.png}}
+    \caption{Component diagram}
+    \vspace*{-12cm}
 \end{figure}
-\end{center}
+\fillandplacepagenumber
+\end{landscape}
 

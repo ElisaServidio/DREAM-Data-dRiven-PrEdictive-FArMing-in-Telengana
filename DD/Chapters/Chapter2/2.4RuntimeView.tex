@@ -7,15 +7,15 @@
     \item \textcolor{orange}{farmer logs in SERVICE: authentication + farmer visualizes relevant information (weather conditions and visits) SERVICE: weather conditions - visit API: weather, moisture}
     \textcolor{green}{
     \item farmer make a help request (+notification of new help request received to agronomist) SERVICE: help request (farmer) - notification
-    \item agronomist replies to help request (+notification of new help response received to farmer) SERVICE: help request (agronomist) - notification
+    \item agronomist replies to help request (+notification of new help response received to farmer) SERVICE: help responce (agronomist) - notification
     \item farmer solves a help request SERVICE: help Request (farmer)}
-    \item farmer insert data (+retreive data and computation performance score) SERVICE: harvest service API: moisture, irrigation
-    \item agronomist visualizes maps and table in the homepage SERVICE: map - table API: google maps
-    \item policy maker visualizes maps and table in the homepage SERVICE: map - time chart API: google maps
+    \item farmer insert data (+retreive data and computation performance score) SERVICE: performance service API: moisture, irrigation
+    \item \textcolor{orange}{agronomist visualizes maps and table in the homepage SERVICE: map - table API: google maps}
+    \item \textcolor{orange}{policy maker visualizes maps and time chart in the homepage SERVICE: map - time chart API: google maps}
     \textcolor{green}{
     \item agronomist updates daily plan (+ notification to farmer) SERVICE: Daily Plan + notification
     \item agronomist confirms daily plan SERVICE: Daily Plan }
-    \item agronomist visualizes weather forecasts SERVICE: weather forecasts API: google maps, weather, soil moisture 
+    \item \textcolor{orange}{agronomist visualizes weather forecasts SERVICE: weather forecasts API: google maps, weather, soil moisture }
     \textcolor{green}{
     \item farmer opens a thread on discussion forum SERVICE: discussion forum
     \item farmer replies to a thread on the discussion forum (+ notification of new post received to farmer who made the thread) SERVICE: discussion forum}
@@ -24,21 +24,66 @@
 }
 
 \paragraph{Farmer Registration}
-\begin{center}
-\begin{figure}[H]
-\centering
-    \includegraphics[angle=90,scale= 0.108]{./Images/Farmer Registration Sequence Diagram.png}
-    \caption{Farmer Registration Sequence Diagram}
-    \label{fig:LandscapeFigure}
-\end{figure}
-\end{center}
 
-\paragraph{Farmer Login}
-\begin{center}
-\begin{figure}[H]
+
+\def\fillandplacepagenumber{%
+ \par\pagestyle{empty}%
+\vbox to 0pt{\vss}\vfill
+\vbox to 0pt{\baselineskip0pt
+   \hbox to\linewidth{\hss}%
+   \setlength{\footskip}{70pt}
+   \baselineskip\footskip
+   \hbox to\linewidth{%
+     \hfil\thepage\hfil}\vss}}
+
+\newpage
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{-2cm}
+\noindent
 \centering
-    \includegraphics[angle=90,scale= 0.108]{./Images/Farmer Login Sequence Diagram.png}
-    \caption{Farmer Login Sequence Diagram}
-    \label{fig:LandscapeFigure}
+\centerline{\includegraphics[scale= 0.108]{./Images/Farmer Registration Sequence Diagram.png}}
+    \caption{Farmer Registration Sequence Diagram}
+    \vspace*{-12cm}
 \end{figure}
-\end{center}
+\fillandplacepagenumber
+\end{landscape}
+
+\newpage
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{-2cm}
+\noindent
+\centering
+\centerline{\includegraphics[scale= 0.108]{./Images/Farmer Login Sequence Diagram.png}}
+    \caption{Farmer Login Sequence Diagram}
+    \vspace*{-12cm}
+\end{figure}
+\fillandplacepagenumber
+\end{landscape}
+
+\newpage
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{-2cm}
+\noindent
+\centering
+\centerline{\includegraphics[scale= 0.108]{./Images/Agronomist visualizes and analyzes his_her mandal's farmers' data.png}}
+    \caption{Agronomist visualizing and analyzing farmers' data Sequence Diagram}
+    \vspace*{-12cm}
+\end{figure}
+\fillandplacepagenumber
+\end{landscape}
+
+\newpage
+\begin{landscape}
+\begin{figure}[h]
+\vspace*{-2cm}
+\noindent
+\centering
+\centerline{\includegraphics[scale= 0.108]{./Images/Agronomist visualizes weather conditions.png}}
+    \caption{Agronomist visualizes weather conditions Sequence Diagram}
+    \vspace*{-12cm}
+\end{figure}
+\fillandplacepagenumber
+\end{landscape}
