@@ -1,1 +1,35 @@
-\section{Architectural Design and Patterns}
+\section{Selected Architectural Style and Patterns}
+This section clarifies the architectural style and architectural pattern adopted in the design of the DREAM system.
+The main difference between the two is that an architectural style is the application design at the highest level of abstraction, it is a name given to a recurrent architectural design; while an architectural pattern is a way to implement an architectural style, it is a way to solve a recurring architectural problem related to it.
+
+\subsection{Architectural Style: Layered}
+The components within the layered architecture model are organized into horizontal layers, each of which plays a specific role within the application.
+The implementation of DREAM is developed on three levels: 
+\begin{itemize}
+    \item a presentation layer
+    \item an application layer 
+    \item a data layer. 
+\end{itemize}
+
+Users access the presentation layer using a GUI. This is the outermost layer and is where data enters the system.
+The data goes through the next layer, which is the layer of the application that executes the business logic, to reach the innermost layer, which is the database layer. The latter has a database for archiving and retrieving data.\\
+The choice of a layered architecture allows the following advantages:
+\begin{itemize}
+    \item easy implementation and also easy maintenance of the software because the levels are separated
+    \item easier testing as each layer is encapsulated and modular
+    \item support of portability
+    \item provides robustness and preserves stability
+    \item allows to configure different levels of security for different components distributed on different levels. This allows to protect parts of the application behind the firewall and make other components accessible from the Internet
+\end{itemize}
+
+
+\subsection{Architectural Pattern: Model-View-Controller Structure}
+The Model-View-Controller structure (MVC) is a Layered architecture.
+It consists of three building blocks: model, view, and controller.
+\begin{itemize}
+    \item The Model layer is just above the database and it contains the core functionality and data
+    \item The View is the top layer and corresponds to what the final user sees. 
+    \item The Controller layer is in the middle and it handles the input from the user by sending data from the Model to the View and 
+    . 
+\end{itemize}\\
+One major advantage of this pattern is the separation of concerns. It means that each layer focuses only on its role.
