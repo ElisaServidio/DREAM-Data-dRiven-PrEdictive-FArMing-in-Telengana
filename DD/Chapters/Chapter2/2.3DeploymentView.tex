@@ -10,12 +10,9 @@ As previously mentioned, the system is divided into 4 Tier, the components of wh
         \item \textbf{Smartphone}: users access the DREAM system and use the related services through a mobile application from a smartphone.
         \item \textbf{Personal Computer}: users access the DREAM system and use the related services through the Web browser from a personal computer.
     \end{itemize}
-    \item \textbf{Web Tier}: it consists of components that handle the interaction between client tier and the business tier.  It contains the Web Server.
+    \item \textbf{Logic Tier}: it consists of components that handle the interaction between client tier and the data tier.  It contains Web and Application Servers.
     \begin{itemize}
         \item \textbf{Web Server}: it provides content to the Web using the HTTP(S) protocol. It mainly works to serve the requested web pages continuously and without interruption. As long as the Web Server is up and running, the corresponding web pages and sites will be available to users on the network.
-    \end{itemize}
-    \item \textbf{Business Tier}: it processes all dynamic content and the interactions between the Client/Web Tier and the Data tier. It contains the Application Server.
-    \begin{itemize}
         \item \textbf{Application Server}: it hosts and exposes business logic and processes. It provides the infrastructure and logical capabilities to support, develop and run applications in a distributed context. The Application Server communicates directly with the Mobile Application through HTTPS protocol, in order to create a lightweight API to request only the necessary data. The Application Server will receive this call, make the call to the external service, filter it, and return only what the application has requested.  This will reduce the amount of data transiting over mobile Internet and thus increase application performance.
     \end{itemize}
     \item \textbf{Data Tier}: it runs the DBMS and holds all of the sensitive application data. It contains database servers.

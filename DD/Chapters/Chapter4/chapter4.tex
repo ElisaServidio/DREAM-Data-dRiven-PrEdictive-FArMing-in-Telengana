@@ -1,2 +1,295 @@
 \chapter{Requirement Traceability}
+In order to check whether all requirements listed in the RASD have been considered designing DREAM application, they are mapped below with the related components described in \textit{Section 2.2}.\\ 
+Furthermore, a good mapping allows to verify if a correct modularity is reached, which allows to manage a complex software for implementation and maintenance purposes.
 
+\begin{itemize}
+
+\item [\textbf{\textit{R.1}}] \textbf{Unregistered user must be able to register to DREAM}
+        \begin{itemize}
+            \item MobileApplication/WebApplication
+            \item RegistrationService
+            \item EmailManager
+            \item GoogleMapsAPI
+            \item TelanganaGovernmentService
+            \item DatabaseAccess
+            \item Database
+        \end{itemize}
+        
+\item [\textbf{\textit{R.2}}] \textbf{User must be able to login to DREAM by filling out the login form}
+    \begin{itemize}
+            \item MobileApplication/WebApplication
+            \item AuthenticationService
+            \item DatabaseAccess
+            \item Database
+    \end{itemize}
+    
+\item [\textbf{\textit{R.3}}] \textbf{The system must be able to associate each farmer to the corresponding mandal according to his/her position}
+\begin{itemize}
+            \item MobileApplication/WebApplication
+            \item RegistrationService
+            \item GoogleMapsAPI
+            \item DatabaseAccess
+            \item Database
+\end{itemize}
+        
+\item [\textbf{\textit{R.4}}] \textbf{Farmer must be able to fill out the form for data insertion}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize}   
+
+\item [\textbf{\textit{R.5}}] \textbf{The system must be able to add parameters to data inserted by farmers regarding their production}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item PerformanceService
+     \item WeatherConditionService
+     \item TelanganaWaterIrrigationService
+    \item CopernicusClimateDataStoreService
+    \item TelanganaGovernmentService
+    \item DatabaseAccess
+    \item Database
+\end{itemize}    
+
+\item [\textbf{\textit{R.6}}] \textbf{The system must be able to return whether a data insertion has been done correctly by the user or not}
+        \begin{itemize}
+            \item MobileApplication/WebApplication
+        \end{itemize}
+        
+\item [\textbf{\textit{R.7}}] \textbf{The system must be able to classify farmers into bad and well performing farmers according to their performance score value}
+   \begin{itemize}
+     \item PerformanceService
+     \item DatabaseAccess
+     \item Database
+\end{itemize}    
+
+\item [\textbf{\textit{R.8}}] \textbf{The system must be able to show the map with performance score regarding farmers}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item MapService
+     \item MandalMapService
+     \item GoogleMapsAPI
+     \item DatabaseAccess
+     \item Database
+\end{itemize}    
+
+\item[\textbf{\textit{R.9}}] \textbf{The policy maker must be able to select options which he/she wants to update the map with}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize}    
+
+\item [\textbf{\textit{R.10}}] \textbf{The system must be able to show the updated map according to the option chosen by policy maker.}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item MapService
+     \item GoogleMapsAPI
+     \item DatabaseAccess
+     \item Database
+\end{itemize}    
+
+\item [\textbf{\textit{R.11}}] \textbf{The policy maker must be able to select options for the time chart}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize}    
+  
+\item [\textbf{\textit{R.12}}] \textbf{The system must be able to show the time chart according to the option chosen by policy maker.}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item TimeChartService
+     \item DatabaseAccess
+     \item Database
+\end{itemize}    
+
+\item [\textbf{\textit{R.13}}]\textbf{The system must be able to compute data according to the chosen operation}
+    \begin{itemize}
+     \item TimeChartService
+     \item MapService
+\end{itemize}    
+
+\item [\textbf{\textit{R.14}}] \textbf{The system must be able to show a table with farmers' data in descending order based on their performance score}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item TableService
+     \item DatabaseAccess
+     \item Database
+\end{itemize}    
+
+\item [\textbf{\textit{R.15}}] \textbf{The system must be able to show the map of mandal's agronomist with weather conditions and soil moisture of the current date}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item WeatherForecastsService
+     \item GoogleMapsAPI
+    \item TelanganaGovernmentService
+    \item CopernicusClimateDataStoreService
+\end{itemize} 
+\item [\textbf{\textit{R.16}}] \textbf{The agronomist must be able to visualize weather forecasts up to seven days after the current date}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item WeatherForecastsService
+     \item GoogleMapsAPI
+    \item TelanganaGovernmentService
+    \item CopernicusClimateDataStoreService
+\end{itemize} 
+\item [\textbf{\textit{R.17}}] \textbf{The system must be able to show the daily plan}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item DailyPlanService
+     \item DatabaseAccess
+     \item Database
+\end{itemize}  
+\item [\textbf{\textit{R.18}}] \textbf{The agronomist must be able to update the daily plan}
+          \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item DailyPlanService
+     \item DatabaseAccess
+     \item Database
+\end{itemize}  
+\item [\textbf{\textit{R.19}}] \textbf{The agronomist must be able to confirm the daily plan}
+   \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item DailyPlanService
+     \item DatabaseAccess
+     \item Database
+\end{itemize}  
+\item [\textbf{\textit{R.20}}] \textbf{The system must be able to show weather conditions and soil moisture regarding farmer’s position}
+  \begin{itemize}
+     \item MobileApplication/WebApplication
+     \item WeatherConditionService
+    \item TelanganaGovernmentService
+    \item CopernicusClimateDataStoreService
+      \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.21}}] \textbf{The farmer must be able to visualize all visits scheduled for him/her}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+    \item VisitService
+      \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.22}}] \textbf{The system must be able to send notifications to the farmer/agronomist}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+
+\item [\textbf{\textit{R.23}}] \textbf{The farmer and the agronomist must be able to visualize notifications’ details}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+
+\item [\textbf{\textit{R.24}}] \textbf{The system must be able to compute suggestions according to the information inserted by the farmer and his/her position}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item SuggestionsService
+     \item WeatherConditionService
+     \item TelanganaGovernmentService
+    \item CopernicusClimateDataStoreService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.25}}]\textbf{ The farmer must be able to request for help}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item HelpRequestService
+     \item PerformanceService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.26}}] \textbf{The system must be able to show to well performing farmers a list of the help requests created and not yet solved with them as recipient}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item HelpRequestService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.27}}] \textbf{The well performing farmer must be able to select a help request to read its details}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+
+\item [\textbf{\textit{R.28}}] \textbf{The system must be able to show the details of the help request selected by the well performing farmers}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+
+\item [\textbf{\textit{R.29}}] \textbf{The well performing farmer must be able to answer to a help request}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item HelpRequestService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.30}}] \textbf{The system must be able to notify the agronomist when a new help request is created and not yet solved}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+
+\item [\textbf{\textit{R.31}}] \textbf{The agronomist must be able to visualize notification’s details}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+
+\item [\textbf{\textit{R.32}}] \textbf{The system must be able to show to the agronomist a list of the help requests created and not yet solved with him/her as recipient.}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item HelpResponseService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.33}}]\textbf{ The agronomist must be able to visualize help requests' details}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+
+\item [\textbf{\textit{R.34}}] \textbf{The agronomist must be able to answer to a help request}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item HelpResponseService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.35}}] \textbf{The farmer must be able to solve a help request}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item HelpResponseService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+
+\item [\textbf{\textit{R.36}}] \textbf{The system must be able to show a list of existing threads only visualizing the associated topic}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item DiscussionForumService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+\item [\textbf{\textit{R.37}}] \textbf{The farmer must be able to visualize a certain thread with related posts}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+\item [\textbf{\textit{R.38}}] \textbf{The farmer must be able to search for a topic on the discussion forum}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+\end{itemize} 
+\item [\textbf{\textit{R.39}}] \textbf{The farmer must be able to open a thread on the discussion forum}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item DiscussionForumService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+\item [\textbf{\textit{R.40}}]\textbf{The farmer must be able to answer on the discussion forum}
+\begin{itemize}
+     \item MobileApplication/WebApplication
+     \item DiscussionForumService
+     \item DatabaseAccess
+     \item Database
+\end{itemize} 
+\end{itemize}
+        
