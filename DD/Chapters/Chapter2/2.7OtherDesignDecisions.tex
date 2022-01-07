@@ -1,21 +1,6 @@
 \section{Other Design Decisions}
 This section describes design decisions that have not been described in the other sections of the document in order to clarify their operation and purpose.
 
-\subsection{ID code for policy maker and agronomist from external database}
-DREAM application implies the interaction with two particular kinds of user: the policy maker, an institutional figure, and the agronomist, a professional figure. Agronomists and policy makers must be authorized through a personal and unique id code to be able to exploit DREAM's functionalities according to their role. \\
 
-It is assumed that those unique id codes are created by Telangana Government and stored persistently in one of its databases accessible from the application only thanks to the external API TelanganaGovernmentService.\\
-
-This means that DREAM has only the permission to visualize the data in the external database to check that the entered id codes are correct, but it has no permission to modify or update or delete it.
-
-\subsection{Internal database replication}
-The replication of the database that contains the persistent data of the system is used with the aim of improving the reliability and performance of the DREAM application.\\
-
-This technique consists of copying a database instance to exactly another location. It is used in distributed database management systems environments where a single database must be used and updated in multiple locations at the same time.\\
-A full replica of the entire database is created at each site of the distributed system. This choice improves system availability because it can continue to work properly as long as at least one site is active.\\
-
-Incremental backup method is expected, with only the changes made after the last backup archived instead of backing up the whole target. \\
-
-Since a single update must be performed on different databases to keep the copies consistent, the update process of the databases can be slow. However, it is necessary because the DREAM application is based precisely on the collection of data that are fundamental for the analysis of farmers' performances.
-
-
+\input{./Chapters/Chapter2/2.7.1 ID code for policy maker and agronomist from external database.tex}
+\input{./Chapters/Chapter2/2.7.2 Internal database replication.tex}

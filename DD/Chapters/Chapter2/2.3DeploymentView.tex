@@ -1,9 +1,7 @@
 \section{Deployment View}
-This section shows the physical distribution of the system, that is, the environment in which the system runs. Specifically, \textit{Figure 2.4} shows the structure of the hardware components that execute the software.
+This section shows the physical distribution of the system, that is, the environment in which the system runs. Specifically, \textit{Figure 2.5} shows the structure of the hardware components that execute the software.
 
-Firewalls are inserted to ensure security between the different zones and load balancers are designed to distribute the workload.\\
-
-As previously mentioned, the system is divided into 4 Tier, the components of which are described below:
+As previously mentioned, the system is divided into three tiers, whose components are described below:
 \begin{itemize}
     \item \textbf{Client Tier}: it consists of the client programs used to exploit system services and the devices on which these programs are installed.
     \begin{itemize}
@@ -13,7 +11,7 @@ As previously mentioned, the system is divided into 4 Tier, the components of wh
     \item \textbf{Logic Tier}: it consists of components that handle the interaction between client tier and the data tier.  It contains Web and Application Servers.
     \begin{itemize}
         \item \textbf{Web Server}: it provides content to the Web using the HTTP(S) protocol. It mainly works to serve the requested web pages continuously and without interruption. As long as the Web Server is up and running, the corresponding web pages and sites will be available to users on the network.
-        \item \textbf{Application Server}: it hosts and exposes business logic and processes. It provides the infrastructure and logical capabilities to support, develop and run applications in a distributed context. The Application Server communicates directly with the Mobile Application through HTTPS protocol, in order to create a lightweight API to request only the necessary data. The Application Server will receive this call, make the call to the external service, filter it, and return only what the application has requested.  This will reduce the amount of data transiting over mobile Internet and thus increase application performance.
+        \item \textbf{Application Server}: it hosts and exposes business logic and processes. It provides the infrastructure and logical capabilities to support, develop and run applications in a distributed context. The Application Server communicates directly with the Mobile Application through HTTP(S) protocol, in order to create a lightweight API to request only the necessary data. The Application Server will receive this call, make the call to the external service, filter it, and return only what the application has requested.  This will reduce the amount of data transiting over mobile Internet and thus increase application performance.
     \end{itemize}
     \item \textbf{Data Tier}: it runs the DBMS and holds all of the sensitive application data. It contains database servers.
     \begin{itemize}

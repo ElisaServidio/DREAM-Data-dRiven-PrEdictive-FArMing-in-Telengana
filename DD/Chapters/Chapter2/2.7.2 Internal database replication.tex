@@ -1,0 +1,9 @@
+\subsection{Internal database replication}
+As showed in \textit{Figure 2.1}, the replication of the database that contains the persistent data of the system is used with the aim of improving the reliability and performance of the DREAM application.\\
+
+This technique consists of copying a database instance to exactly another location. It is used in distributed database management systems environments where a single database must be used and updated in multiple locations at the same time.\\
+A full replica of the entire database is created at each site of the distributed system. This choice improves system availability because it can continue to work properly as long as at least one site is active.\\
+
+Incremental backup method is expected, with only the changes made after the last backup archived instead of backing up the whole target. \\
+
+Since a single update must be performed on different databases to keep the copies consistent, the update process of the databases can be slow. However, it is necessary because the DREAM application is based precisely on the collection of data that are fundamental for the analysis of farmers' performances.
