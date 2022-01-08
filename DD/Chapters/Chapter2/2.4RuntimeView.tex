@@ -16,8 +16,8 @@ All functionalities described by the following diagrams can be performed through
 
 \subsection{Farmer registers}
 
-In this sequence diagram it is shown the process of registration attended by the farmer. It is supposed that the farmer has already selected is role in the registration form and the Web/Mobile Application shows him/her the related field.\\ 
-After having switched from the\textit{login} page to the \textit{registration} one, he/she signs up filling in the registration form. Then, Web/MobileApplication checks that all the credentials inserted by the farmer are valid. Then, the registration request is sent from Web/MobileApplication to RegistrationService component which is in charge of retrieving position and mandal of the farmer (through GoogleMapsAPI) before storing his/her data persistently in the Database. Eventually, DatabaseAccess component is called to store the information in the Database. The result of the operation is propagated back to Web/Mobile Application, following in reverse order the same path as before. If the result is negative the registration should be repeated and an alert regarding registration failure is sent to the farmer. If the result is positive the farmer is redirected to a waiting page and the Web/mobile application calls RegistrationService component to send a confirmation email to the farmer. The function is propagated to EmailManager component which is in charge to check if the farmer has clicked on the confirmation link in the email within a certain time limit. The result of the operation is propagated back to Web/MobileApplication, following in reverse order the same path as before. If the result is negative an alert regarding confirmation failure is sent to the farmer and he/her has to request for the generation of a new confirmation email to repeat the process. If the result is positive the farmer is redirected to \textit{login} page.\\
+In this sequence diagram it is shown the process of registration attended by the farmer. It is supposed that the farmer has already selected is role in the registration form and the Web/Mobile Application shows him/her the related fields.\\ 
+After having switched from the \textit{login} page to the \textit{registration} one, he/she signs up filling in the registration form. Then, Web/MobileApplication checks that all the credentials inserted by the farmer are valid. Then, the registration request is sent from Web/MobileApplication to RegistrationService component which is in charge of retrieving position and mandal of the farmer (through GoogleMapsAPI) before storing his/her data persistently in the Database. Eventually, DatabaseAccess component is called to store the information in the Database. The result of the operation is propagated back to Web/Mobile Application, following in reverse order the same path as before. If the result is negative the registration should be repeated and an alert regarding registration failure is sent to the farmer. If the result is positive the farmer is redirected to a waiting page and the Web/mobile application calls RegistrationService component to send a confirmation email to the farmer. The function is propagated to EmailManager component which is in charge to check if the farmer has clicked on the confirmation link in the email within a certain time limit. The result of the operation is propagated back to Web/MobileApplication, following in reverse order the same path as before. If the result is negative an alert regarding confirmation failure is sent to the farmer and he/her has to request for the generation of a new confirmation email to repeat the process. If the result is positive the farmer is redirected to \textit{login} page.\\
 The process of registration is different for the agronomist and the policy maker. In fact, the credentials to be inserted differ in particular in a unique id code which is checked calling an appropriate function to be propagated from Web/MobileApplication to RegistrationService. This component is in charge of verifying the id code calling TelanganaGovernmentService component. Eventually, the result of the operation is returned following in reverse order the same path as before and if it is false the filling operation must be repeated. 
 
 \newpage
@@ -27,7 +27,7 @@ The process of registration is different for the agronomist and the policy maker
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Farmer Registration Sequence Diagram.png}}
-    \caption{Farmer Registration - Sequence Diagram}
+    \caption{Farmer registers}
     \vspace*{-12cm}
 \end{figure}
 \fillandplacepagenumber
@@ -47,7 +47,7 @@ The farmer must be able to visualize his/her \textit{homepage}, in which are rep
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Farmer Login Sequence Diagram.png}}
-    \caption{Farmer Login Sequence Diagram}
+    \caption{Farmer logs in}
     \vspace*{-12cm}
 \end{figure}
 \fillandplacepagenumber
@@ -83,8 +83,8 @@ Eventually, the suggestion is stored in the Database and is returned following t
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{2cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/DREAM sends suggestions to farmer.png}}
@@ -102,8 +102,8 @@ Once the \textit{discussion forum} page is shown to the farmer, he/she clicks on
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{1.5cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Farmer searches for a thread on the discussion forum.png}}
@@ -121,8 +121,8 @@ Once the \textit{discussion forum} page is shown to the farmer, he/she clicks on
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{2cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Farmer creates a new thread on the discussion forum.png}}
@@ -155,7 +155,7 @@ Once the \textit{discussion forum} page is shown to the farmer, he/she clicks on
 
 This sequence diagram shows the procedure of a farmer, already registered and logged in, creating a help request.\\
 He/she clicks on \textit{help request} icon. To return to the farmer the related page, Web/MobileApplication propagates a request to get all help requests and related help responses related to the farmer to HelpRequestService which is able to retrieve them from the Database through DatabaseAccess. 
-Once the \textit{help request} page is shown to the farmer, he/she clicks on \textit{create help request} button and a form is returned by Web/MobileApplication. The farmer inserts the text in the appropriated field and checks well performing farmers as recipient if he/she wants to. Web/MobileApplication calls a function to store the new thread. The request is propagated to HelpRequestService which is in charge of  adding additional information to the help request before returning the help request following the same path to show its details to the farmer. The help request is then stored in the Database. The result and the help request are returned to Web/MobileApplication following the same path. If result is false the operation must be repeated. If it is true a notification is always sent to the agronomist responsible of the mandal which the farmer is located in. If well performing farmers are also checked as recipient a function is called by PerformanceService to get well performing farmers given all farmers' performances. The farmers retrieved are returned to Web/MobileApplication which is now able to send them a notification about the new help request received. 
+Once the \textit{help request} page is shown to the farmer, he/she clicks on \textit{create help request} button and a form is returned by Web/MobileApplication. The farmer inserts the text in the appropriated field and checks well performing farmers as recipient if he/she wants to. Web/MobileApplication calls a function to store the new help request. The request is propagated to HelpRequestService which is in charge of  adding additional information to the help request before returning it following the same path to show its details to the farmer. The help request is then stored in the Database. The result and the help request are returned to Web/MobileApplication following the same path. If result is false the operation must be repeated. If it is true a notification is always sent to the agronomist responsible of the mandal which the farmer is located in. If well performing farmers are also checked as recipient a function is called by PerformanceService to get well performing farmers given all farmers' performances. The farmers retrieved are returned to Web/MobileApplication which is now able to send them a notification about the new help request received. 
 
 \newpage
 \begin{landscape}
@@ -178,8 +178,8 @@ Once the \textit{help request} page is shown to the agronomist, he/she clicks on
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{1cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Agronomist replies to a help request.png}}
@@ -197,8 +197,8 @@ Once the \textit{help request} page is shown to the farmer, he/she clicks on \te
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{2cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Farmer solves a help request.png}}
@@ -212,14 +212,14 @@ Once the \textit{help request} page is shown to the farmer, he/she clicks on \te
 
 This sequence diagram shows the procedure of an agronomist, already registered and logged in, visualizing weather conditions.\\
 The agronomist clicks on \textit{weather} icon.
-He/she can optionally select the date (from the current day up to seven day) for which he wants to visualize data. By default, if he/she doesn't select anything, the system shows him weather conditions for the current day. To return to the agronomist the related page, Web/MobileApplication propagates a request to get the weather map of his/her mandal to WeatherForecastsService which is able to retrieve weather and soil moisture data from external APIs (TelanganaGovernmentService and CopernicusClimateDataStoreService).
+He/she can optionally select the date (from the current day up to seven days) for which he/she wants to visualize data. By default, if he/she doesn't select anything, the system shows him/her weather conditions for the current day. To return to the agronomist the related page, Web/MobileApplication propagates a request to get the weather map of his/her mandal to WeatherForecastsService which is able to retrieve weather and soil moisture data from external APIs (TelanganaGovernmentService and CopernicusClimateDataStoreService).
 Then, data retrieved are returned to WeatherForecastsService which is in charge also of processing the mandal weather map interacting with GoogleMapsAPI.  
 Eventually, the map is shown to the agronomist.
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{1.5cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Agronomist visualizes weather conditions.png}}
@@ -233,17 +233,17 @@ Eventually, the map is shown to the agronomist.
 
 This sequence diagram shows the procedure of an agronomist, already registered and logged in, visualizing and analyzing his/her mandal's farmers' data in the homepage of the application.\\
 The agronomist opens the application. 
-Web/MobileApplication propagates two requests, one to TableService to get a table of farmers' performances in descending order and the other one to MandalMapService to get the mandal map on which are displayed farmers's performances scores. For both services is necessary to retrieve from the Database mandal's farmers' data (including performances and positions). Those data are returned to TableService and to MandalMapService. The latter component is in charge of processing the map to be displayed to the agronomist, for this reason it interacts with GoogleMapAPI external service.
+Web/MobileApplication propagates two requests, one to TableService to get a table of farmers' performances in descending order and the other one to MandalMapService to get the mandal map on which are displayed farmers's performances scores. For both services it is necessary to retrieve from the Database mandal's farmers' data (including performances and positions). Those data are returned to TableService and to MandalMapService. The latter component is in charge of processing the map to be displayed to the agronomist, for this reason it interacts with GoogleMapAPI external service.
 Eventually the \textit{homepage} is shown to the agronomist.
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{1.5cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Agronomist visualizes and analyzes his_her mandal's farmers' data.png}}
-    \caption{Agronomist visualizing and analyzing farmers' data Sequence Diagram}
+    \caption{Agronomist visualizing and analyzing farmers' data}
     \vspace*{-12cm}
 \end{figure}
 \fillandplacepagenumber
@@ -274,14 +274,14 @@ Eventually the result and the visit are returned following the same path and a n
 
 This sequence diagram shows the procedure of an agronomist, already registered and logged in, confirming his/her daily plan.\\
 The agronomist clicks on \textit{daily plan} icon. To return to the agronomist the related page, Web/MobileApplication propagates a request to get all daily plans and visits related to the agronomist to DailyPlanService which is able to retrieve them from the Database through DatabaseAccess. 
-Once the \textit{daily plan} page is shown to the agronomist, he/she clicks on a certain daily plan page and a function to retrieve the selected daily plan and related visits is called by Web/MobileApplication and propagated to DailyPlanService which is in charge of finding the selected daily plan. The result is returned following the same path and daily plan details are shown to the agronomist. He/she clicks on \textit{confirm} button and the confirmation form is returned by Web/MobileApplication. The agronomist optionally insert deviations from the daily plan in the appropriate field and then submits. Then, a function is called and propagated by Web/MobileApplication change the state of the daily plan into confirmed and related visits' status into done in the Database. 
+Once the \textit{daily plan} page is shown to the agronomist, he/she clicks on a certain daily plan page and a function to retrieve the selected daily plan and related visits is called by Web/MobileApplication and propagated to DailyPlanService which is in charge of finding the selected daily plan. The result is returned following the same path and daily plan details are shown to the agronomist. He/she clicks on \textit{confirm} button and the confirmation form is returned by Web/MobileApplication. The agronomist optionally inserts deviations from the daily plan in the appropriate field and then submits. Then, a function is called and propagated by Web/MobileApplication to change the state of the daily plan into confirmed and related visits' status into done in the Database. 
 Eventually the result is returned following the same path.
 If result is false the process must be repeated. 
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{2cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Agronomist confirms his_her daily plan.png}}
@@ -300,8 +300,8 @@ Eventually the \textit{homepage} is shown to the policy maker.
 
 \newpage
 \begin{landscape}
-\begin{figure}[h]
-\vspace*{-2cm}
+\begin{figure}[t!]
+\vspace*{1cm}
 \noindent
 \centering
 \centerline{\includegraphics[scale= 0.108]{./Images/Sequence diagram/Policy Maker visualizes and analyzes farmers' data.png}}

@@ -1,12 +1,12 @@
 \section{Implementation Plan}
 
-In order to choose which component will be implemented first, there are two main approaches:
+In order to choose which component will be implemented first, there are two main strategies that could be followed:
 \begin{itemize}
     \item Bottom-Up
     \item Top-Down 
 \end{itemize}
 The approach that has been chosen for this task, and also for the Integration and Testing, it the first one, Bottom-up.
-First of all this approach permits to extend, in a future, the functionalities of DREAM without so much effort compared to Top-Down, and programmers could also perform testing and integration in parallel with the implementation in a quite easy way: when a component is implemented, programmers perform Unit testing immediately, and as the system grows through the Integration testing it is checked that the different modules interacts correctly. When the entire system is completed, using this incremental process, System testing is performed, that will ensure that every requirement has been satisfied.\newline
+First of all it permits to extend, in a future, the functionalities of DREAM without so much effort compared to Top-Down, and programmers could also perform testing and integration in parallel with the implementation in a quite easy way: when a component is implemented, programmers perform Unit testing immediately, and as the system grows through the Integration testing it is checked that the different modules interacts correctly. When the entire system is completed, using this incremental process, System testing is performed, that will ensure that every requirement has been satisfied.\newline
 The main disadvantage of this strategy is that it is not possible to release a "early version" of the product, however this issue is compensated by a higher execution speed that the Bottom-Up approach ensures.
 In this kind of approach, in order to establish which component will be implemented first, it's important to exploit dependencies between components: if a component relies on another one, necessarily the latter must be integrated before the former.
 Adopting the method described above, we start by choosing components which are completely independent from the other ones, or that, as in this case, only rely on external components.\newline
