@@ -12,9 +12,8 @@ The aim of the project is to analyze and propose a solution to agriculture in th
 For full specification [here](https://github.com/arstek131/DREAM-Data-dRiven-PrEdictive-FArMing-in-Telengana/blob/main/01.%20Assignment%20RDD%20AY%202021-2022.pdf).
 
 The final version includes:
-* Requirement Analysis and Specification Document (RASD);
-* Design Document (DD);
-
+* [Requirement Analysis and Specification Document (RASD)](https://github.com/ElisaServidio/DREAM-Data-dRiven-PrEdictive-FArMing-in-Telengana/blob/main/RASD/RASD.pdf);
+* [Design Document (DD)](https://github.com/ElisaServidio/DREAM-Data-dRiven-PrEdictive-FArMing-in-Telengana/blob/main/DD/DD.pdf);
 
 ## Group Members
 - [Arslan Ali](https://github.com/arstek131)
